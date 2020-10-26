@@ -1,12 +1,10 @@
-# read in the datafile
+#read data file
 
-filename = 'data/wxobs20170821.txt' 
-
-datafile = open(filename, 'r')  
-
-with open(filename, 'r') as datafile:
-     data = datafile.read()  
+filename="data/wxobs20170821.txt"
 
 
-# DEBUG 
-print(data) 
+with open(filename, 'r') as datafile:      # 'with' provides cleanup an ensures the file is closed at the end  
+	data=datafile.read()
+
+
+
