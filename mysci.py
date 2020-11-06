@@ -1,6 +1,19 @@
-#initalizing a data variable
-data={'date':[],'time':[],'tempout':[]}
 
+
+
+#column names and column indecies to read
+
+columns={'date':0,'time':1,'tempout':2}
+
+# data types for each column
+
+types={'tempout':float}
+
+
+#initalizing a data variable
+data={}
+for column in columns:
+    data[column]=[]
 
 
 
@@ -18,8 +31,11 @@ with open(filename, 'r') as datafile:      # 'with' provides cleanup an ensures 
     # read and parse the rest of the file
     for line in datafile:
         split_line=line.split()
-        data['date'].append(split_line[0])
-        data['time'].append(split_line[1])
-        data['tempout'].append(float(split_line[2]))
+        for column in columns:
+            i=columns[column]
+            t=types.get(column, str)
+            value=t(split_line[i])
+            data[column].append(value)
+
 
 
