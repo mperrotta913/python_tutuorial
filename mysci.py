@@ -40,4 +40,28 @@ with open(filename, 'r') as datafile:      # 'with' provides cleanup an ensures 
             data[column].append(value)
 
 
+#computer windchill temperature
 
+def compute_windchill(t,v):
+    a=35.74
+    b=.6215
+    c=35.74
+    d=.4275
+
+    v16=v**.16
+
+    wci=a=(b*t)-(c*v16)+(d*t*v16)
+    return wci
+
+
+
+#running the fuction to compute windchill temperature
+windchill=[]
+
+for temp, windspeed in zip(data['tempout'],data['windspeed']):
+    windchill.append(compute_windchill(temp,windspeed))
+    
+
+
+#debug
+print(windchill)
