@@ -3,11 +3,11 @@
 
 #column names and column indecies to read
 
-columns={'date':0,'time':1,'tempout':2}
+columns={'date':0,'time':1,'tempout':2, 'windspeed':7}
 
 # data types for each column
 
-types={'tempout':float}
+types={'tempout':float, 'windspeed':float}
 
 
 #initalizing a data variable
@@ -27,6 +27,8 @@ with open(filename, 'r') as datafile:      # 'with' provides cleanup an ensures 
     # read the first 3 lins (header) of the file
     for _ in range(3):
         datafile.readline()
+        
+
 
     # read and parse the rest of the file
     for line in datafile:
