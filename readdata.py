@@ -1,6 +1,6 @@
 
 
-def read_data(columns, types{},filename="data/wxobs20170821.txt"):
+def read_data(columns, types={},filename="data/wxobs20170821.txt"):
     """
     this area is for notes on the script without the restriction of 1 line that '#' has. for this script, 
 
