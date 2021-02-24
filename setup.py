@@ -6,5 +6,5 @@ setup(
     description="A sample package",
     author="Xdev",
     author_email="xdev@ucar.edu",
-    packages:["mysci'],
-    package_requires=[])
+    packages=["mysci"],
+    install_requires=[])
